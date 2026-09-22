@@ -30,3 +30,4 @@ jobs:
 
       - name: Run validation script
         run: node ./ci.js
+        
