@@ -1,9 +1,6 @@
 name: Ensure Formatting
 
 on:
-  push:
-    branches:
-      - "**"
   pull_request:
     types: [opened, reopened, synchronize]
 
@@ -16,14 +13,14 @@ jobs:
     steps:
       - name: Checkout repository
         # Pinned to commit SHA to mitigate third-party action tampering
-        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.7.0
         with:
           # Prevent persisting repository auth token in the workspace
           persist-credentials: false
 
       - name: Use Node.js 16
-        # Pinned to commit SHA to mitigate third-party action tampering
-        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3.8.2
+        # Pinned to commit SHA to mitigate third-party action tampering (SHA points upstream to v3.9.1)
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3.9.1
         with:
           node-version: 16
           cache: "yarn"
